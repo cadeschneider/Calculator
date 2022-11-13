@@ -1,18 +1,58 @@
-main {
-    width: 50%;
-    height: 75%;
-    display: grid;
-    grid-template-columns: repeat(4, minmax(80px, 1fr));
+body{
+    background-color: #f2cda6 ;
 }
 
-div{
+main{
+    background-color: #e3dfdc;
+    padding: 60px 20px 20px 20px;
+    border-radius: 20px;
+    width: 50%;
+    height: 75%;
+}
+
+#pad {
+
+    display: grid;
+    grid-template-columns: repeat(4, minmax(80px, 1fr));
+    background-color: #cfc1b3;
+    padding: 15px 10px 15px 10px;
+    border-radius: 20px;
+}
+
+.digit, .operator, #zero, #clear, #equal{
+    margin: 10px;
+    border-radius: 15px;
+    font-size: 1.5em;
+    font-weight: bold;
+    box-shadow: rgba(0,0,0,0.25) 0px 3px 10px;
+    outline-offset: -5px;
+}
+
+#display{
     grid-column: 1 /5;
     grid-row: 1;
     aspect-ratio: 4;
+    background-color: #bfbfa1;
+    outline: 10px solid #1a1a1a;
+    margin: 10px 10px 60px 10px;
+    border-radius: 5px;
+    outline-offset: -5px;
+    
+    
 }
 
 .operator{
     aspect-ratio: 1;
+    background-color: #eab072;
+    outline: 10px solid #e29743;
+    outline-offset: -5px;
+    color: #f6f0eb
+}
+
+.digit, #zero {
+    background-color: #f6f0eb;
+    outline: 10px solid #e3d8ca;
+    color: #b14e1e;
 }
 
 .digit{
@@ -21,15 +61,33 @@ div{
 
 #zero {
     grid-column: 1 /3;
-    grid-row: 6;
 }
 
 #clear{
     aspect-ratio: 1;
+    background-color: #dc6428;
+    outline: 10px solid #b14e1e;
+    color: #f6f0eb
 
 }
 
 #equal{
     aspect-ratio: 1;
+    background-color: #a49dab;
+    outline: 10px solid #8b8192;
+    color: #f6f0eb
+}
 
+button{
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+button:hover{
+    opacity: 0.75;
+}
+
+button:focus{
+    filter: brightness(85%)
 }
