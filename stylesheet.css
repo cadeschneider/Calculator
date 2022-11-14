@@ -29,16 +29,19 @@ main{
 }
 
 #display{
-    grid-column: 1 /5;
-    grid-row: 1;
+    display: flex;
+    justify-content: right;
     aspect-ratio: 4;
     background-color: #bfbfa1;
     outline: 10px solid #1a1a1a;
     margin: 10px 10px 60px 10px;
     border-radius: 5px;
-    outline-offset: -5px;
-    
-    
+    outline-offset: -5px;  
+}
+
+span{
+    margin: 20px 25px 15px 10px;
+    font-size: 3em;
 }
 
 .operator{

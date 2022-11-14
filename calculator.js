@@ -1,39 +1,60 @@
-const add = function(input1, input2) {
-	return input1 + input2
+function Clear(){
+  let display = document.querySelector('span');
+  display.textContent = "";
+}
+
+const calculate = {
+
+  input: 0,
+
+  add: function(input2) {
+    return calculate.input + input2
+  },
+
+  subtract: function(input2) {
+    return calculate.input - input2
+  },
+
+  divide: function(input2) {
+    return calculate.input / input2
+  },
+
+  multiply: function(input2) {
+    return calculate.input * input2
+  },
 };
 
-const subtract = function(input1, input2) {
-	return input1 - input2
-};
+let input2 = 0
+let operation =""
 
-const sum = function(array1) {
-	return array1.reduce((total, value) => total + value, 0);
-};
+Clear()
 
-const multiply = function(array1) {
-  prodArray = array1.reduce((total, value) => total * value, 1);
-  return prodArray;
-};
+let digit = document.querySelectorAll('.digit');
+digit.forEach(item => item.addEventListener('click', function(event){
 
-const power = function(input1, input2) {
-	return input1 ** input2
-};
+   let display = document.querySelector('span');
+   display.textContent += event.target.textContent;
 
-const factorial = function(num) {
-  if (num === 0 || num === 1)
-    return 1;
-  for (var i = num - 1; i >= 1; i--) {
-    num *= i;
-  }
-  return num;
-};
+}));
 
-// Do not edit below this line
-module.exports = {
-  add,
-  subtract,
-  sum,
-  multiply,
-  power,
-  factorial
-};
+let operator = document.querySelectorAll('.operator');
+operator.forEach(item => item.addEventListener('click', function(event){
+    
+   calculate.input = display.textContent;
+   Clear()
+   operation = event.target.id;
+
+}));
+
+let equals = document.querySelectorAll('#equal');
+equals.forEach(item => item.addEventListener('click', function(event){
+    
+   let display = document.querySelector('span');
+   display.textContent = calculate[operation](display.textContent);
+
+}));
+
+let clr = document.querySelector('#clear');
+clr.onclick = function() {
+  Clear();
+}
